@@ -1,0 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eruffieu <eruffieu@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2014/11/06 20:25:54 by eruffieu          #+#    #+#             */
+/*   Updated: 2014/11/11 16:26:05 by eruffieu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	if (!n)
+		return (0);
+	while (n--)
+	{
+		if (*s1 != *s2)
+			return (*(unsigned char*)(s1) - *(unsigned char*)(s2));
+		if (!*s1 || !*s2)
+			return (0);
+		s1++;
+		s2++;
+	}
+	return (0);
+}
